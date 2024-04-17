@@ -7,7 +7,7 @@ import { AxiosResponse } from "axios";
 const createTodo = async (todo: Todo): Promise<Todo> => {
 	try {
 		const response: AxiosResponse = await todoAPI.post<Todo>(
-			"/todos",
+			"/todos/",
 			todo
 		);
 		return response.data;

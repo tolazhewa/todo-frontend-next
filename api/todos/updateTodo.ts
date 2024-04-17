@@ -6,7 +6,10 @@ import { AxiosResponse } from "axios";
 
 const updateTodo = async (todo: Todo): Promise<Todo> => {
 	try {
-		const response: AxiosResponse = await todoAPI.put<Todo>("/todos", todo);
+		const response: AxiosResponse = await todoAPI.put<Todo>(
+			"/todos/",
+			todo
+		);
 		return response.data;
 	} catch (error) {
 		console.error("Error fetching todos:", error);
