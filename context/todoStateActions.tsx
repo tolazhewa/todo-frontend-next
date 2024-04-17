@@ -4,6 +4,7 @@ import { createTodo } from "@/api/todos/createTodo";
 import Todo from "@/models/todo";
 import { deleteTodo } from "@/api/todos/deleteTodo";
 import { getTodos } from "@/api/todos/getTodos";
+import { updateTodo } from "@/api/todos/updateTodo";
 
 export const fetchTodosAction = async (
 	dispatch: Dispatch<TodoAction>
@@ -42,11 +43,7 @@ export const updateTodoAction = async (
 ): Promise<void> => {
 	dispatch({ type: TodoActionType.UPDATE_START });
 	try {
-		// TODO
-		const newTodo: Todo = {
-			text: "",
-			completed: false,
-		};
+		const newTodo = await updateTodo(todo);
 		dispatch({ type: TodoActionType.UPDATE_SUCCESS, payload: newTodo });
 	} catch (e) {
 		dispatch({
@@ -58,7 +55,7 @@ export const updateTodoAction = async (
 
 export const deleteTodoAction = async (
 	dispatch: Dispatch<TodoAction>,
-	todoId: number
+	todoId: string
 ): Promise<void> => {
 	dispatch({ type: TodoActionType.DELETE_START });
 	try {

@@ -67,7 +67,7 @@ type DeletePayloads =
 	  }
 	| {
 			type: TodoActionType.DELETE_SUCCESS;
-			payload: number;
+			payload: string;
 	  }
 	| {
 			type: TodoActionType.DELETE_FAILURE;

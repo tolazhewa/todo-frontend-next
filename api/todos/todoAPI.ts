@@ -6,7 +6,7 @@ const config: AppConfig = getConfig();
 const host: String = config.todoAPI.host;
 const port: String = config.todoAPI.port;
 const todoAPI: AxiosInstance = axios.create({
-	baseURL: `http://${host}:${port}/api`,
+	baseURL: `http://${host}:${port}/api/v1`,
 	timeout: 1000,
 });
 

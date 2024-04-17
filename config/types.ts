@@ -1,4 +1,4 @@
-export type Environment = "production" | "development" | "local";
+export type Environment = "prod" | "dev" | "local";
 export interface APIConfig {
 	host: String;
 	port: String;

@@ -9,7 +9,7 @@ const getTodos = async (): Promise<Todo[]> => {
 		return response.data;
 	} catch (error) {
 		console.error("Error fetching todos:", error);
-		return [];
+		throw error;
 	}
 };
 

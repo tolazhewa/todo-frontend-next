@@ -21,7 +21,7 @@ export function TodoCard(props: TodoCardProps) {
 				<div className="flex-1">
 					<div className="flex items-center align-middle gap-4">
 						<div className="flex-1">
-							<CardTitle>{props.todo.text}</CardTitle>
+							<CardTitle>{props.todo.title}</CardTitle>
 						</div>
 					</div>
 				</div>

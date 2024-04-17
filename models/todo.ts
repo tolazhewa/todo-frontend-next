@@ -1,7 +1,7 @@
 export default interface Todo {
-	id?: number;
-	userId?: number;
-	text: string;
+	id?: string;
+	userId?: string;
+	title: string;
 	completed: boolean;
 	creationDatetime?: string;
 	latestUpdateDatetime?: string;

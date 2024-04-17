@@ -8,7 +8,7 @@ import Todo from "@/models/todo";
 import { useTodoContext } from "@/context/todoContext";
 
 export function TodoCreationCard() {
-	const { createTodo } = useTodoContext();
+	const { state, createTodo } = useTodoContext();
 	const textRef = useRef<HTMLInputElement>(null);
 
 	const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -17,8 +17,8 @@ export function TodoCreationCard() {
 			return;
 		}
 		const newTodo: Todo = {
-			text: textRef.current.value,
-			userId: 1,
+			title: textRef.current.value,
+			userId: "1",
 			completed: false,
 		};
 
@@ -35,11 +35,14 @@ export function TodoCreationCard() {
 					className="flex w-full items-center space-x-2"
 				>
 					<Input
+						disabled={state.loading}
 						type="text"
 						placeholder="Enter todo..."
 						ref={textRef}
 					/>
-					<Button variant="ghost">Create</Button>
+					<Button variant="ghost" disabled={state.loading}>
+						Create
+					</Button>
 				</form>
 			</CardContent>
 		</Card>

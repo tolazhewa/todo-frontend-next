@@ -9,10 +9,10 @@ function getConfig(): AppConfig {
 	const env: Env = process.env as Env;
 	const environment: string | undefined = env.ENVIRONMENT;
 	switch (environment) {
-		case "production": {
+		case "prod": {
 			return prodConfig;
 		}
-		case "development": {
+		case "dev": {
 			return devConfig;
 		}
 		case "local": {

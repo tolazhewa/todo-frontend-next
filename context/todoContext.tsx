@@ -29,7 +29,7 @@ const TodoContext = createContext<{
 	fetchTodos: () => Promise<void>;
 	createTodo: (todo: Todo) => Promise<void>;
 	updateTodo: (todo: Todo) => Promise<void>;
-	deleteTodo: (todoId: number) => Promise<void>;
+	deleteTodo: (todoId: string) => Promise<void>;
 }>({
 	state: initialState,
 	dispatch: () => null,
@@ -149,7 +149,7 @@ export const TodoContextProvider = ({
 		[dispatch]
 	);
 	const boundDeleteTodo = useCallback(
-		async (todoId: number) => deleteTodoAction(dispatch, todoId),
+		async (todoId: string) => deleteTodoAction(dispatch, todoId),
 		[dispatch]
 	);
 
