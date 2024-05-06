@@ -1,7 +1,7 @@
 import { defineConfig } from "../defineConfig";
 
 export default defineConfig({
-	environment: "production",
+	environment: "prod",
 	todoAPI: {
 		host: "localhost",
 		port: "8080",

@@ -1,7 +1,7 @@
 "use server";
 
 import Todo from "@/models/todo";
-import todoAPI from "./todoAPI";
+import todoAPI from "../todoAPI";
 import { AxiosResponse } from "axios";
 
 const deleteTodo = async (todoId: string): Promise<void> => {
